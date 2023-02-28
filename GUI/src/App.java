@@ -1,28 +1,49 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+import javax.security.auth.Subject;
+import javax.swing.*;
 
 public class App {
     
-
     public static void main(String[] args) throws Exception {
-        JFrame frame = new JFrame("SAMPLE GUI");
-        JLabel label = new JLabel("HELLO WORLD!");
-        JButton button = new JButton("Click me!!!");
-        JButton button2 = new JButton("another button");
+        String s = "This is a testingg";
+        ArrayList<String> stringArraylist = new ArrayList<>();
+        StringTokenizer token = new StringTokenizer(s, " ");
+        char tempReverse [];
+        String returnedString = "";
+        while (token.hasMoreTokens()) {
+          stringArraylist.add(token.nextElement().toString());
+        }
 
-        frame.setVisible(true); //shows the window/jframe
-        frame.setSize(400, 500); //sets the window size
-        frame.add(label);
-        frame.add(button); //adds the button into the frame
-        frame.add(button2);
+        for (int x=0; x<stringArraylist.size(); x++){
 
-        frame.setLayout(null); //so the components wont messed up
+          if (stringArraylist.get(x).length() >= 5){
+            tempReverse = new char [stringArraylist.get(x).length()];
+            int index = stringArraylist.get(x).length();
+            String reversedString = "";
 
-        //sets the placing and the sizes of buttons, labels, etc.
-        label.setBounds(200, 0, 400, 50);
-        button.setBounds(0, 90, 100, 100);
-        button2.setBounds(50, 10, 50, 50);
+            for (int y=0; y<stringArraylist.get(x).length(); y++){
+              tempReverse[index-1] = stringArraylist.get(x).charAt(y);
+              index --;
+            }
+
+            for (int z=0; z<stringArraylist.get(x).length(); z++){
+              reversedString += tempReverse[z] + " ";
+            }
+
+            stringArraylist.set(x, reversedString);
+
+          }
+
+        }
+
+        for (int a=0; a<stringArraylist.size(); a++){
+          returnedString += stringArraylist.get(a) + " ";
+        }
+
+        System.out.println(returnedString);
 
     }
 }
