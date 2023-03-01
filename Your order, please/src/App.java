@@ -5,12 +5,12 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Your order, please");
 
-        String words = "is2 Thi1s T4est 3a";
+        String words = "4of Fo1r pe6ople g3ood th5e the2";
         StringTokenizer wordsToken = new StringTokenizer(words, " ");
-        String [] orderedString = new String [wordsToken.countTokens()];
-        String temp;
+        String[] orderedString = new String[wordsToken.countTokens()];
+        String result = "";
 
-        for (int x=0; x<orderedString.length; x++) {
+        for (int x = 0; x < orderedString.length; x++) {
             orderedString[x] = wordsToken.nextToken();
         }
 
@@ -18,18 +18,14 @@ public class App {
 
             for (int y = 0; y < orderedString.length; y++) {
 
-                if (orderedString[y].contains(Integer.toString(x+1))) {
-                    temp = orderedString[y];
-                    orderedString[y] = orderedString[x+1];
-                    orderedString[x+1] = temp;
+                if (orderedString[y].contains(Integer.toString(x + 1))) {
+                    result += orderedString[y] + " ";
                 }
 
             }
         }
 
-        for (int x=0; x<orderedString.length; x++) {
-            System.out.println(orderedString[x]);
-        }
+        System.out.println(result.isBlank() ? "" : result.substring(0, result.length() - 1));
 
     }
 }
