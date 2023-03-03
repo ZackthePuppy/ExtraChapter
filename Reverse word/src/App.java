@@ -18,5 +18,31 @@ public class App {
             }
         }
         sc.close();
+
+
+        //ANOTHER WAY FOR REVERSING WORD WITHOUT REVERSING WHOLE SENTENCES
+        // String original = "This is an example!";
+        // if (original.isBlank()){
+        //     System.out.println(original);
+        // }
+        // else {
+            
+        //     String [] splittedWords = original.split(" ");
+        //     String result = "";
+            
+        //     for (int x=0; x<splittedWords.length; x++){
+        //         for (int y=splittedWords[x].length()-1; y>=0 ; y--){
+        //             result += splittedWords[x].charAt(y);
+        //         }
+        //         result += " ";
+        //     }
+            
+        //     System.out.println(result.substring(0, result.length()-1));
+        // }
+
+
+
+
+
     }
 }
